@@ -17,7 +17,7 @@ class UserController extends Controller
         $this->userTransformer = new UserTransformer();
     }
 
-    public function getUserByPaginate()
+    public function getListUser()
     {
         $allData = $this->userRepository->getAll();
         $data_result = [];
