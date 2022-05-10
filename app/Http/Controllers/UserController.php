@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Repositories\User\UserRepositoryInterface;
 use App\Transformers\UserTransformer;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -13,6 +12,7 @@ class UserController extends Controller
 
     public function __construct(UserRepositoryInterface $userRepository)
     {
+        parent::__construct();
         $this->userRepository = $userRepository;
         $this->userTransformer = new UserTransformer();
     }
