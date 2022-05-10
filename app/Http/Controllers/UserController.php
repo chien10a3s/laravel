@@ -20,9 +20,9 @@ class UserController extends Controller
     public function getListUser()
     {
         $allData = $this->userRepository->getAll();
-        $data_result = [];
+        $dataResult = [];
         if (count($allData) > 0)
-            $data_result = $this->userTransformer->transform_collection($allData->all());
-        return $this->returnJson(STATUS_SUCCESS, $data_result);
+            $dataResult = $this->userTransformer->transform_collection($allData->all());
+        return $this->returnJson(STATUS_SUCCESS, $dataResult);
     }
 }
