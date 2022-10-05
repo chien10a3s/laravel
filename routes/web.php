@@ -17,3 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/user', [\App\Http\Controllers\UserController::class, 'getUserByPaginate'])->name('user');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+    Route::get('/home', [App\Http\Controllers\ClassController::class, 'index'])->name('home');
+});
